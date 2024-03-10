@@ -8,10 +8,12 @@
 
 ## How to start your emulators
 ### IOS Emulator
-Windows: 
+Windows:
+
 *Unfortunately for windows there is no IOS emulator available for use natively, the only option for developing for IOS is using React Natives built in Expo go to run a local server on your iphone*
+
 1. Download Expo Go on your respective IPhone
-2. Start your loacl server
+2. Start your local server
 3. Expo should give you an option to scan a qr code
 ![image](https://github.com/taimurtawil/Drinking-Game/assets/92693639/297eb472-b5fe-400d-8b2d-ac2a386e83c0)
 4. Scan the qr code and test your app!
@@ -24,7 +26,7 @@ MacOS:
 5. Once the server is running, press i in the terminal to launch your app on the iPhone Simulator.
 
 
-## Android Emulator
+### Android Emulator
 1. Download and install Android Studio
 2. Follow the installation instructions provided for your operating system.
 3. Open Android Studio. and Go to Tools > AVD Manager.
