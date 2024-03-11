@@ -4,7 +4,7 @@ import GameEntryButton from "./GameEntryButton";
 import AppStyles from "../styles/AppStyles";
 import gameButtonDetails from "../constants/GameButtonDetails";
 /**
- * Renders a list of game entry buttons.
+ * Renders a list of game entry buttons to be displayed on the home screen (bottom 90 percent).
  *
  * @param {Object} props - The component props.
  * @param {Array} props.gameEntries - An array of objects, where each objects contains the props (text and function to be called when clicked) for a GameEntryButton.

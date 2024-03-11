@@ -80,6 +80,16 @@ MacOS:
 
 ## New Files, what i actually did...
 
-    not much so far. created a TopBanner.js component that should display "Drinking Game" at the top of the screen upon loading.
+    created a working home screen. as of now, that is what App.js returns.
+    Components created:
+        1. GameEntryButtonList - this is the list of buttons that we will display on the home screen.
+        2. GameEntryButton - the child component to above.
+        3. TopBanner - this is what displays "Drinking Game (name pending) at the top of the screen.
+    Other things of note:
+        Created AppStyles.js in the styles directory. this is what i think we should use for keeping a consistent
+        style thorughout the app. good for maintaining modular workflow and quick customization
+
+        Created GameButtonDetails.js in the constants directory. Used for the GameEntryButtonList.
+        If you want to create a new button, append the object representing the button's details to this list.
 
     To keep style consistent, I added a

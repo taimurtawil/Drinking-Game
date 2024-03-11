@@ -17,13 +17,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  topBannerContainer: {
-    flex: 1,
-  },
-  bottomContainer: {
-    flex: 9,
-    backgroundColor: AppStyles.default_primary_color,
-  },
 });
 
 export default HomeScreen;

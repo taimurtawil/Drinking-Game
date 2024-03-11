@@ -1,6 +1,6 @@
 // AppStyles.js
 
-// Style constants
+// Style constants used throughout the app.
 const AppStyles = {
   default_primary_color: "green",
   default_secondary_color: "black",
