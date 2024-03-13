@@ -6,6 +6,7 @@ import gameButtonDetails from "../constants/GameButtonDetails";
 /**
  * Renders a list of game entry buttons to be displayed on the home screen (bottom 90 percent).
  *
+ *
  * @param {Object} props - The component props.
  * @param {Array} props.gameEntries - An array of objects, where each objects contains the props (text and function to be called when clicked) for a GameEntryButton.
  * @returns {JSX.Element} The rendered component.
@@ -31,6 +32,7 @@ const styles = StyleSheet.create({
   view: {
     flex: 9,
     backgroundColor: AppStyles.default_primary_color,
+    paddingVertical: 10, //further padding around the list itself
   },
 });
 export default GameEntryButtonList;

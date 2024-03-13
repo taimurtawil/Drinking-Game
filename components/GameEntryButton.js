@@ -1,40 +1,91 @@
-import React from "react";
-import { TouchableOpacity, Text, StyleSheet } from "react-native";
+import React, { useState } from "react";
+import {
+  TouchableOpacity,
+  Text,
+  StyleSheet,
+  Dimensions,
+  Animated,
+} from "react-native";
 import AppStyles from "../styles/AppStyles";
+import { LinearGradient } from "expo-linear-gradient";
+import { useNavigation } from "@react-navigation/native";
 
-const GameEntryButton = ({ onPress, style, buttonText }) => {
-  //if an onPress is passed (a function that will cause the user to enter the game),
-  //then the onPress function will be called when the button is pressed.
-  //if not, then a default alert will be shown.
+const { height, width } = Dimensions.get("window"); // Correctly get screen width and height
+
+const GameEntryButton = ({ onPress, buttonText }) => {
+  const navigation = useNavigation();
+  const [fadeAnim] = useState(new Animated.Value(1)); // Initial opacity is 1
+
+  const handlePressIn = () => {
+    Animated.timing(fadeAnim, {
+      toValue: 0.5,
+      duration: 200,
+      useNativeDriver: true,
+    }).start();
+  };
+
+  const handlePressOut = () => {
+    Animated.timing(fadeAnim, {
+      toValue: 1,
+      duration: 200,
+      useNativeDriver: true,
+    }).start();
+  };
+
   const handlePress = () => {
     if (onPress) {
       onPress();
+    }
+    if (buttonText === "Truth or Dare") {
+      navigation.navigate("TruthOrDare");
     } else {
       alert(`${buttonText} button clicked!`);
     }
   };
 
   return (
-    <TouchableOpacity onPress={handlePress} style={[styles.button, style]}>
-      <Text style={styles.buttonText}>{buttonText}</Text>
-    </TouchableOpacity>
+    <LinearGradient
+      colors={["#4c669f", "#3b5998", "#192f6a"]}
+      style={styles.button}
+      start={{ x: 0, y: 0 }}
+      end={{ x: 1, y: 0 }}
+    >
+      <TouchableOpacity
+        onPressIn={handlePressIn}
+        onPressOut={handlePressOut}
+        onPress={handlePress}
+        style={styles.touchable}
+      >
+        <Animated.View style={{ flex: 1, width: "100%", opacity: fadeAnim }}>
+          <Text style={styles.buttonText}>{buttonText}</Text>
+        </Animated.View>
+      </TouchableOpacity>
+    </LinearGradient>
   );
 };
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: AppStyles.default_secondary_color,
+    height: height * 0.15,
     borderRadius: 10,
-    paddingVertical: 10,
-    paddingHorizontal: 20,
     alignItems: "center",
     justifyContent: "center",
+    width: "100%",
+    marginVertical: 10,
+  },
+  touchable: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    width: "100%",
   },
   buttonText: {
-    color: AppStyles.default_primary_color,
+    color: "#FFFFFF",
     fontFamily: AppStyles.default_font_family,
-    fontSize: AppStyles.default_font_size,
+    fontSize: width * 0.05,
     fontWeight: "bold",
+    paddingHorizontal: width * 0.2,
+    textAlign: "center",
   },
 });
 

@@ -1,9 +1,27 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "./screens/HomeScreen";
 import TopBanner from "./components/TopBanner";
+import TruthOrDareHome from "./screens/TruthOrDareHome"; // Create this screen
+
+const Stack = createNativeStackNavigator(); //this is the stack navigator for navigating between screens
+
 export default function App() {
-  return <HomeScreen />;
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        {/* keep this first so its shown by default*/}
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen
+          name="TruthOrDare"
+          component={TruthOrDareHome}
+          options={{ title: "Truth or Dare" }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 }
 
 const styles = StyleSheet.create({
