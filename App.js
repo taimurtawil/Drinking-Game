@@ -3,8 +3,8 @@ import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "./screens/HomeScreen";
-import TopBanner from "./components/TopBanner";
 import TruthOrDareHome from "./screens/TruthOrDareHome"; // Create this screen
+import TruthOrDareGame from "./games/TruthOrDareGame"; // Make sure to import TruthOrDareGame
 
 const Stack = createNativeStackNavigator(); //this is the stack navigator for navigating between screens
 
@@ -18,6 +18,11 @@ export default function App() {
           name="TruthOrDare"
           component={TruthOrDareHome}
           options={{ title: "Truth or Dare" }}
+        />
+        <Stack.Screen
+          name="TruthOrDareGame" // This is the game screen where truths or dares are displayed
+          component={TruthOrDareGame}
+          options={{ title: "Play" }} // Optionally, adjust the title or add more options
         />
       </Stack.Navigator>
     </NavigationContainer>
