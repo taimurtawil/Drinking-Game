@@ -3,9 +3,10 @@ import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "./screens/HomeScreen";
-import TruthOrDareHome from "./screens/TruthOrDareHome"; // Create this screen
+import TruthOrDareHome from "./screens/TruthOrDareMode"; // Create this screen
 import TruthOrDareGame from "./games/TruthOrDareGame"; // Make sure to import TruthOrDareGame
-
+import NHIEmodes from "./screens/NHIEmodes";
+import NHIEgame from "./games/NHIEgame";
 const Stack = createNativeStackNavigator(); //this is the stack navigator for navigating between screens
 
 export default function App() {
@@ -16,13 +17,23 @@ export default function App() {
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen
           name="TruthOrDare"
-          component={TruthOrDareHome}
-          options={{ title: "Truth or Dare" }}
+          component={TruthOrDareGame}
+          options={{ title: "Select Mode" }}
         />
         <Stack.Screen
           name="TruthOrDareGame" // This is the game screen where truths or dares are displayed
           component={TruthOrDareGame}
-          options={{ title: "Play" }} // Optionally, adjust the title or add more options
+          options={{ title: "Truth Or Dare" }} // Optionally, adjust the title or add more options
+        />
+        <Stack.Screen
+          name="NHIEmodes"
+          component={NHIEmodes}
+          options={{ title: "Never Have I Ever" }}
+        />
+        <Stack.Screen
+          name="NHIEgame"
+          component={NHIEgame}
+          options={{ title: "Play" }}
         />
       </Stack.Navigator>
     </NavigationContainer>

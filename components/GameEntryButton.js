@@ -36,10 +36,15 @@ const GameEntryButton = ({ onPress, buttonText }) => {
     if (onPress) {
       onPress();
     }
-    if (buttonText === "Truth or Dare") {
-      navigation.navigate("TruthOrDare");
-    } else {
-      alert(`${buttonText} button clicked!`);
+    switch (buttonText) {
+      case "Truth or Dare":
+        navigation.navigate("TruthOrDare");
+        break;
+      case "Never Have I Ever":
+        navigation.navigate("NHIEmodes");
+        break;
+      default:
+        alert(`${buttonText} button clicked!`);
     }
   };
 

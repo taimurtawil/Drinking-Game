@@ -15,9 +15,15 @@ a default alert will be shown when the button is pressed.
 const gameButtonDetails = [
   { onPress: null, gameName: "21 Questions" },
   { onPress: null, gameName: "Truth or Dare" },
-  { onPress: null, gameName: "Cards (contains subcategories)" },
+  {
+    onPress: null,
+    gameName: "Cards (contains subcategories (ride the bus, kings))",
+  },
   { onPress: null, gameName: "Silent Library" },
-  { onPress: null, gameName: "Game 5" },
+  { onPress: null, gameName: "Never Have I Ever" },
+  { onPress: null, gameName: "Most Likely To" },
+  { onPress: null, gameName: "Charades" },
+  { onPress: null, gameName: "Would You Rather" },
 ];
 
 export default gameButtonDetails;
