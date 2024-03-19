@@ -13,17 +13,32 @@ Note that it's configured in the GameEntryButton.js file that if onPress is null
 a default alert will be shown when the button is pressed.
 */
 const gameButtonDetails = [
-  { onPress: null, gameName: "21 Questions" },
-  { onPress: null, gameName: "Truth or Dare" },
   {
-    onPress: null,
-    gameName: "Cards (contains subcategories (ride the bus, kings))",
+    gameName: "21 Questions",
+    navpath: null,
   },
-  { onPress: null, gameName: "Silent Library" },
-  { onPress: null, gameName: "Never Have I Ever" },
-  { onPress: null, gameName: "Most Likely To" },
-  { onPress: null, gameName: "Charades" },
-  { onPress: null, gameName: "Would You Rather" },
+  {
+    gameName: "Truth or Dare",
+    navpath: "TruthOrDare",
+  },
+  {
+    gameName: "Cards (contains subcategories (ride the bus, kings))",
+    navpath: null,
+  },
+  {
+    gameName: "Silent Library",
+    navpath: null,
+  },
+  { gameName: "Never Have I Ever", navpath: "NHIE" },
+  {
+    gameName: "Most Likely To",
+    navpath: null,
+  },
+  { gameName: "Charades", navTarget: "ModeSelector", navpath: "Charades" },
+  {
+    gameName: "Would You Rather",
+    navpath: null,
+  },
 ];
 
 export default gameButtonDetails;

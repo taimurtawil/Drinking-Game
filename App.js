@@ -7,6 +7,7 @@ import TruthOrDareHome from "./screens/TruthOrDareMode"; // Create this screen
 import TruthOrDareGame from "./games/TruthOrDareGame"; // Make sure to import TruthOrDareGame
 import NHIEmodes from "./screens/NHIEmodes";
 import NHIEgame from "./games/NHIEgame";
+import ModeSelector from "./screens/ModeSelector";
 const Stack = createNativeStackNavigator(); //this is the stack navigator for navigating between screens
 
 export default function App() {
@@ -15,21 +16,22 @@ export default function App() {
       <Stack.Navigator>
         {/* keep this first so its shown by default*/}
         <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen
+        {/* <Stack.Screen
           name="TruthOrDare"
           component={TruthOrDareGame}
           options={{ title: "Select Mode" }}
-        />
+        /> */}
         <Stack.Screen
           name="TruthOrDareGame" // This is the game screen where truths or dares are displayed
           component={TruthOrDareGame}
           options={{ title: "Truth Or Dare" }} // Optionally, adjust the title or add more options
         />
-        <Stack.Screen
+        {/* <Stack.Screen
           name="NHIEmodes"
           component={NHIEmodes}
           options={{ title: "Never Have I Ever" }}
-        />
+        /> */}
+        <Stack.Screen name="ModeSelector" component={ModeSelector} />
         <Stack.Screen
           name="NHIEgame"
           component={NHIEgame}

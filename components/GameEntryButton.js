@@ -12,7 +12,7 @@ import { useNavigation } from "@react-navigation/native";
 
 const { height, width } = Dimensions.get("window"); // Correctly get screen width and height
 
-const GameEntryButton = ({ onPress, buttonText }) => {
+const GameEntryButton = ({ onPress, buttonText, navpath }) => {
   const navigation = useNavigation();
   const [fadeAnim] = useState(new Animated.Value(1)); // Initial opacity is 1
 
@@ -33,19 +33,11 @@ const GameEntryButton = ({ onPress, buttonText }) => {
   };
 
   const handlePress = () => {
-    if (onPress) {
-      onPress();
+    if (navpath) {
+      navigation.navigate("ModeSelector", { game: navpath });
+      return;
     }
-    switch (buttonText) {
-      case "Truth or Dare":
-        navigation.navigate("TruthOrDare");
-        break;
-      case "Never Have I Ever":
-        navigation.navigate("NHIEmodes");
-        break;
-      default:
-        alert(`${buttonText} button clicked!`);
-    }
+    alert(`You pressed the ${buttonText} button!`);
   };
 
   return (
