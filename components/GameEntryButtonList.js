@@ -14,6 +14,7 @@ const GameEntryButtonList = () => {
             key={index}
             buttonText={game.gameName}
             navpath={game.navpath}
+            hasModes={game.hasModes}
           />
         ))}
       </ScrollView>

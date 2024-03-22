@@ -1,9 +1,6 @@
 Liam:
-finished ToD and Never have I ever. still have to make it look nice but it works.
-Think it might be worth it to have one customizable component for selecting game modes - call it ModeSelector.js. You can pass a prop into this component for whichever game you'll be selecting the mode for (prop "game"), and given this it will return acomponent with various options and routes. but one file for a centralized format and modularity sounds better than the current implementation.
-
-Ex. ModeSelector({game: "Truth or Dare"}) should return the same screen that the truth or dare mode selector currently returns. There can be another file with the necessary data of what should be returned.
-
+Custom punishments for failing a truth or dare?
+Implement the rules button across the app. Update teh function to accept a prop that will determine what the button looks like.
 Taimur:
 Up to u.
 

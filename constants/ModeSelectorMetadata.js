@@ -18,7 +18,16 @@ const ModeSelectorMetadata = {
     ],
     navigationTarget: "TruthOrDareGame",
   },
-  // Add other games here as needed
+  Charades: {
+    modes: [
+      { title: "All Categories", mode: "All" },
+      { title: "Movies/TV", mode: "MoviesTV" },
+      { title: "Animals", mode: "Animals" },
+      { title: "Occupations", mode: "Occupations" },
+      { title: "Characters", mode: "Characters" },
+    ],
+    navigationTarget: "Charades",
+  },
 };
 
 export default ModeSelectorMetadata;

@@ -8,6 +8,7 @@ import TruthOrDareGame from "./games/TruthOrDareGame"; // Make sure to import Tr
 import NHIEmodes from "./screens/NHIEmodes";
 import NHIEgame from "./games/NHIEgame";
 import ModeSelector from "./screens/ModeSelector";
+import WheelOfMisfortuneGame from "./games/WheelOfMisfortuneGame";
 const Stack = createNativeStackNavigator(); //this is the stack navigator for navigating between screens
 
 export default function App() {
@@ -36,6 +37,11 @@ export default function App() {
           name="NHIEgame"
           component={NHIEgame}
           options={{ title: "Play" }}
+        />
+        <Stack.Screen
+          name="WheelOfMisfortune"
+          component={WheelOfMisfortuneGame}
+          options={{ title: "Wheel of Misfortune" }}
         />
       </Stack.Navigator>
     </NavigationContainer>

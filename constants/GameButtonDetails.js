@@ -16,28 +16,47 @@ const gameButtonDetails = [
   {
     gameName: "21 Questions",
     navpath: null,
+    hasModes: false,
   },
   {
     gameName: "Truth or Dare",
     navpath: "TruthOrDare",
+    hasModes: true,
   },
   {
     gameName: "Cards (contains subcategories (ride the bus, kings))",
     navpath: null,
+    hasModes: true,
   },
   {
     gameName: "Silent Library",
     navpath: null,
+    hasModes: false,
   },
-  { gameName: "Never Have I Ever", navpath: "NHIE" },
+  {
+    gameName: "Never Have I Ever",
+    navpath: "NHIE",
+    hasModes: true,
+  },
   {
     gameName: "Most Likely To",
     navpath: null,
+    hasModes: true,
   },
-  { gameName: "Charades", navTarget: "ModeSelector", navpath: "Charades" },
+  {
+    gameName: "Charades",
+    navpath: "Charades",
+    hasModes: true,
+  },
   {
     gameName: "Would You Rather",
     navpath: null,
+    hasModes: true,
+  },
+  {
+    gameName: "Wheel of Misfortune",
+    navpath: "WheelOfMisfortune",
+    hasModes: false,
   },
 ];
 

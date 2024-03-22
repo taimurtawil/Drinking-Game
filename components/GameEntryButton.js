@@ -12,7 +12,7 @@ import { useNavigation } from "@react-navigation/native";
 
 const { height, width } = Dimensions.get("window"); // Correctly get screen width and height
 
-const GameEntryButton = ({ onPress, buttonText, navpath }) => {
+const GameEntryButton = ({ buttonText, navpath, hasModes }) => {
   const navigation = useNavigation();
   const [fadeAnim] = useState(new Animated.Value(1)); // Initial opacity is 1
 
@@ -33,16 +33,23 @@ const GameEntryButton = ({ onPress, buttonText, navpath }) => {
   };
 
   const handlePress = () => {
-    if (navpath) {
+    if (!navpath) {
+      alert(`You pressed the ${buttonText} button!`);
+      return;
+    }
+    if (hasModes) {
       navigation.navigate("ModeSelector", { game: navpath });
       return;
     }
-    alert(`You pressed the ${buttonText} button!`);
+    navigation.navigate(navpath);
   };
+  const buttonColors = navpath
+    ? ["#ff6347", "#ff6347", "#ff6347"]
+    : ["#4c669f", "#3b5998", "#192f6a"];
 
   return (
     <LinearGradient
-      colors={["#4c669f", "#3b5998", "#192f6a"]}
+      colors={buttonColors}
       style={styles.button}
       start={{ x: 0, y: 0 }}
       end={{ x: 1, y: 0 }}
